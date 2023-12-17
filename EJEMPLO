@@ -1,0 +1,743 @@
+#include<iostream>
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#include<string.h>
+
+using namespace std;
+int main ()
+{
+	int opc; 
+	do
+	{
+    	cout << "                              Menu Principal          " << endl;
+        cout << "----------------------------------------------------------------------------------" << endl ;
+        cout << "     1. Secuenciales" << endl;
+        cout << "     2. Selectivas" << endl;
+        cout << "     3. Repetitivas" << endl;
+        cout << "     0. Salir"<< endl;
+    	cout << "----------------------------------------------------------------------------------" << endl ;
+        cout << "     Ingrese su opcion"<< endl;
+		cin>>opc;
+		switch(opc)
+		{
+			case 0: 
+				return 0;
+			case 1:
+				int opc1;
+				do
+				{
+                    cout << "                              Menu Secuenciales            " << endl;
+                    cout << "----------------------------------------------------------------------------------" << endl;
+					cout<<"			1.- Suma de tres numeros"<<endl;
+					cout<<"			2.- Area del cuadrado"<<endl;
+					cout<<"			3.- Area del triangulo"<<endl;
+					cout<<"			4.- Calcular el 25% de descuento del precio de un artefacto"<<endl;
+					cout<<"			5.- Calcular el promedio de uno de sus cursos"<<endl;
+					cout<<"			6.- Meses de ahorro para comprar un celular de 500 soles"<<endl;
+					cout<<"			7.- Area del circulo"<<endl;
+					cout<<"			8.- Raices de la ecuacion cuadratica"<<endl;
+					cout<<"			9.- Sueldo neto de un trabajador"<<endl;
+					cout<<"			10.- Importe de compra de 2 tipos de articulos y vuelto"<<endl;
+					cout<<"			0.- Retornar"<<endl;
+                    cout << "----------------------------------------------------------------------------------" << endl;
+                    cout << "     Ingrese su opcion: ";
+					cin>>opc1;
+					switch (opc1)
+					{
+						case 0:
+							break;
+						case 1:
+							float ingresarNumero();
+							float calcularSuma(float a, float b, float c);
+							void mostrarResultado(float a, float b, float c, float suma);
+							
+							int main() {
+							    float a, b, c, suma;
+							
+							    a = ingresarNumero();
+							    b = ingresarNumero();
+							    c = ingresarNumero();
+							
+							    suma = calcularSuma(a, b, c);
+							
+							    mostrarResultado(a, b, c, suma);
+							
+							    return 0;
+							}
+							
+							float ingresarNumero() {
+							    float num;
+							    cout << "Ingrese un numero: ";
+							    cin >> num;
+							    return num;
+							}
+							
+							float calcularSuma(float a, float b, float c) {
+							    return a + b + c;
+							}
+							
+							void mostrarResultado(float a, float b, float c, float suma) {
+							    cout << "La suma de " << a << " + " << b << " + " << c << " es " << suma << endl;
+}						
+							break;
+						case 2:
+							float lado,producto;
+							cout<<"Ingrese el lado de un cuadrado ";
+							cin>>lado;
+							producto=lado*lado;
+							cout<<"El area del cuadrado es "<<producto<<endl;
+							break;
+						case 3:
+							float base,altura,producto1;
+							cout<<"ingrese la longitud de la base"<<endl;
+							cout<<"ingrese la longitud de la altura"<<endl;
+							cin>>base>>altura;
+							producto1=(base*altura)/2;
+							cout<<"El area del triangulo es "<<producto1<<endl;
+							break;
+						case 4:
+							float precio,descuento;
+							cout<<"Ingrese el precio del producto en soles "<<endl;
+							cin>>precio;
+							descuento=precio/4;
+							cout<<"El 25% de descuento es "<<descuento<<" soles"<<endl;
+							break;
+						case 5:
+							float nota1,nota2,nota3,promedio;
+							cout<<"Ingrese su nota de trabajos"<<endl;
+							cout<<"Ingrese su nota de examen parcial"<<endl;
+							cout<<"Ingrese su nota de examen final"<<endl;
+							cin>>nota1>>nota2>>nota3;
+							promedio=(nota1*4+nota2*3+nota3*3)/10;
+							cout<<"Su promedio es de "<<promedio<<endl;
+							break;
+						case 6:
+							float sueldo,meses;
+							cout<<"Ingrese su sueldo en soles"<<endl;
+							cin>>sueldo;
+							meses=500/sueldo;
+							cout<<"El numero de meses que debe ahorrar para comprar un celular de 500 soles es "<<ceil(meses)<<endl;
+							break;
+						case 7:	
+						float radio,area,pi;
+						cout<<"Ingrese el la longitud del radio del circulo"<<endl;
+						cin>>radio;
+						area=pi*pow(radio,2);
+						cout<<"El area del circulo es "<<area<<endl;
+							break;						
+						case 8:
+							float c1,c2,c3,re1,re2;
+							cout<<"Ingrese el valor de la primera costante"<<endl;
+							cout<<"Ingrese el valor de la segunda costante"<<endl;
+							cout<<"Ingrese el valor de la tercera costante"<<endl;
+							cin>>c1>>c2>>c3;
+							re1=(-c2 + sqrt(c2*c2 -4*c1*c3))/2*c1;
+							re2=(-c2 - sqrt(c2*c2 -4*c1*c3))/2*c1;
+							cout<<"Las raices de la funcion cuadratica son "<<re1<<" y "<<re2<<endl;
+							break;
+						case 9:
+							float sb, bono, desc;
+							cout<<"Ingrese el sueldo basico del trabajador"<<endl;
+							cin>>sb;
+							cout<<"Ingrese la bonificacion que recibe"<<endl;
+							cin>>bono;
+							cout<<"Ingrese el descuento realizado al trabajador"<<endl;
+							cin>>desc;
+							cout<<"El sueldo neto es "<<sb + bono - desc<<" soles"<<endl;
+							break;
+						case 10:
+							float art1, art2, precio1, precio2, importetotal, pago;
+							cout<<"Ingrese la cantidad de unidades del primer articulo"<<endl;
+							cin>>art1;
+							cout<<"Ingrese el precio unitario"<<endl;
+							cin>>precio1;
+							cout<<"Ingrese la cantidad de unidades del segundo articulo"<<endl;
+							cin>>art2;
+							cout<<"Ingrese el precio unitario"<<endl;
+							cin>>precio2;
+							importetotal = art1*precio1 + art2*precio2;
+							cout<<"El importe total es "<<importetotal<<" soles"<<endl;
+							cout<<"Ingrese el monto con el que va a pagar"<<endl;
+							cin>>pago;
+							cout<<"Su vuelto es "<<pago-importetotal<<" soles"<<endl;
+							break;
+					}
+				} while(opc1!=0);
+					break;
+			case 2:
+				int opc2;
+				do
+				{
+                    cout << "                              Menu Selectivas            " << endl;
+                    cout << "----------------------------------------------------------------------------------" << endl;
+					cout<<"		1.- Selectiva simple "<<endl;
+					cout<<"		2.- Selectiva doble "<<endl;
+					cout<<"		3.- Selectiva anidada "<<endl;
+					cout<<"		4.- Selectiva multiple "<<endl;
+					cout<<"		0.- Retornar"<<endl;
+                    cout << "----------------------------------------------------------------------------------" << endl;
+                    cout << "     Ingrese su opcion: ";
+					cin>>opc2;
+					switch(opc2)
+					{
+						case 0:
+							break;
+						case 1:
+							int opc2_1;
+							do
+							{
+			                    cout << "                    Selectivas Simples            " << endl;
+			                    cout << "----------------------------------------------------------------------------------" << endl;
+								cout<<"		0.- Retornar"<<endl;
+			                    cout << "----------------------------------------------------------------------------------" << endl;
+			                    cout << "     Ingrese su opcion: ";
+								switch(opc2_1)
+								{
+									case 0:
+										break;
+								}	 
+							} while (opc2_1!=0);
+							break;
+						case 2:
+							int opc2_2;
+							do
+							{
+			                    cout << "                    Selectivas Dobles            " << endl;
+			                    cout << "----------------------------------------------------------------------------------" << endl;
+								cout<<"		0.- Retornar"<<endl;
+			                    cout << "----------------------------------------------------------------------------------" << endl;
+			                    cout << "     Ingrese su opcion: ";
+								break;
+								switch(opc2_2)
+								{
+									case 0:
+										break;
+								}
+							} while (opc2_2!=0);
+							break;
+						case 3:
+							int opc2_3;
+							do
+							{
+			                    cout << "                    Selectivas Anidadas            " << endl;
+			                    cout << "----------------------------------------------------------------------------------" << endl;
+								cout<<"		1.-  Calcular descuento y sueldo neto de un trabajador"<<endl;
+								cout<<"		2.- Ordenar tres numeros de mayor a menor"<<endl;
+								cout<<"		3.- Determinar si tres longitudes forman triangulo y su area"<<endl;
+								cout<<"		4.- Costo del alquiler de un auto segun su recorrido"<<endl;
+								cout<<"		5.- Datos del personal segun codigo de 4 cifras"<<endl;
+								cout<<"		6.- Comision de un empleado"<<endl;
+								cout<<"		7.- Descuento en un supermercado"<<endl;
+								cout<<"		8.- Utilidad anual que recibe un trabajador"<<endl;
+								cout<<"		9.- Determinar si un numero es par, impar o nulo"<<endl;
+								cout<<"		10.- Determinar si un anio es bisiesto"<<endl;
+								cout<<"		0.- Retornar"<<endl;
+			                    cout << "----------------------------------------------------------------------------------" << endl;
+			                    cout << "     Ingrese su opcion: ";
+								switch(opc2_3)
+								{
+									case 0:
+										break;
+									case 1:
+										float s,sn,ds,desc,desc1,desc2;
+										cout<<"Ingrese su sueldo"<<endl;
+										cin>>s;
+									
+										if (s<=1000){
+											ds=s*0.1;
+										}
+										else{
+											if (s<=2000){
+												ds=100+(s-1000)*0.05;
+												}
+												else{
+													ds=150+(s-2000)*0.03; 
+												}
+											}
+										sn=s-ds;
+										cout<<"El descuento es de: "<<ds<<endl;
+										cout<<"El sueldo neto es de: "<<sn<<endl;
+										break;
+									case 2:
+										float a,b,c;
+										cout<<"Ingrese el primer numero"<<endl;
+										cin>>a;
+										cout<<"Ingrese el segundo numero"<<endl;
+										cin>>b;
+										cout<<"Ingrese el tercer numero"<<endl;
+										cin>>c;
+										if (a==b&&a==c){
+											cout<<a<<"-"<<b<<"-"<<c<<endl;
+										}
+										else{
+											cout<<"El orden de mayor a menor es: "<<endl;
+											if (a>b&&a>c){
+												if (b>c){
+												cout<<a<<"-"<<b<<"-"<<c<<endl;
+												}
+												else{
+												cout<<a<<"-"<<c<<"-"<<b<<endl;
+												}
+											}
+											if (b>a&&b>c){
+												if (a>c){
+												cout<<b<<"-"<<a<<"-"<<c<<endl;
+												}
+												else{
+												cout<<b<<"-"<<c<<"-"<<a<<endl;
+												}
+											}
+											if (c>a&&c>b){
+												if (a>b){
+												cout<<c<<"-"<<a<<"-"<<b<<endl;
+												}
+												else{
+												cout<<c<<"-"<<b<<"-"<<a<<endl;
+												}
+											}
+										}
+										break;
+									case 3:
+										float la,lb,lc,ar,sp;
+										cout<<"Escribir 3 longitudes"<<endl;
+										cin>>la;
+										cin>>lb;
+										cin>>lc;
+										if ((la+lb)>lc && (la+lc)>lb && (lc+lb)>la){
+											cout<<"Las longitudes pueden formar un triangulo"<<endl;
+												if (la==lc && lc==lb)
+													cout<<"El tipo de triangulo es equilatero"<<endl;
+												else{
+													if (la==lb || lb==lc || lc==la)
+														cout<<"El tipo de triangulo es isosceles"<<endl;
+													else 
+														cout<<"El tipo de triangulo es escaleno"<<endl;
+													}
+												sp=(la+lb+lc)/2;
+												ar=sqrt(sp*(sp-la)*(sp-lb)*(sp-lc));
+												cout<<"El area del triangulo es "<<ar<<endl;
+										}
+										else
+											cout<<"Las longitudes no forman un triangulo"<<endl;
+										break;
+									case 4:
+										float dr,ft,e1,e2;
+										cout<<"Registra la distancia recorrida por el vehiculo"<<endl;
+										cin>>dr;
+										if (dr<=300)
+											ft=250;
+										else {
+											if (dr<=1000){
+												e1=dr-300;
+												ft=250+e1*30;
+											}
+											else{
+												e1=700;
+												e2=dr-1000;
+												ft=250+e1*30+e2*20;
+											}
+										}
+										cout<<"El monto a pagar es de: "<<ft<<" soles"<<endl;
+										break;
+									case 5:
+										int cod, ec, gen, edad;
+										cout<<"Ingrese el codigo del empleado ";
+										cin>>cod;
+										ec = floor(cod/1000);
+										gen = cod%10;
+										edad = (cod-gen/10)%100;
+										if (cod<1000 || cod>5000 || edad<18 || gen<1 || gen>2){
+										cout<<"Codigo invalido"<<endl;
+										}
+										else 
+										{
+											if (ec == 1)
+												cout<<"El estado civil es soltero"<<endl;
+											if (ec == 2)
+												cout<<"El estado civil es casado"<<endl;
+											if (ec == 3)
+												cout<<"El estado civil es viudo"<<endl;
+											if (ec == 4)
+												cout<<"El estado civil es divorciado"<<endl;
+											cout<<"Su edad es "<<edad<<endl;
+											if (gen == 1)
+												cout<<"Su genero es femenino"<<endl;
+											if (gen == 2)
+												cout<<"Su genero es masculino"<<endl;
+										}
+										break;
+									case 6:
+										float ventas;
+										cout<<"Ingrese la cantidad en soles de sus ventas: ";
+										cin>>ventas;
+										if (ventas<=150)
+											cout<<"Su comision es igual a 0"<<endl;
+										else
+										{
+											if (ventas<=400)
+												cout<<"Su comision es "<<ventas/10<<" soles"<<endl;
+											else
+												cout<<"Su comision es "<<50 + ventas*9/100<<" soles"<<endl;
+										}
+										break;
+									case 7:
+										float mnt, dsc, bnf;
+										cout<<"Ingrese el monto de compra de un cliente"<<endl;
+										cin>>mnt;
+										if (mnt>5000)
+											dsc=0.3;
+										else {
+											if (mnt>3000)
+												dsc=0.2;
+											else{
+												if (mnt>1000)
+													dsc=0.1;
+												else 
+													dsc=0;
+											}
+										}
+										bnf=mnt*dsc;
+										cout<<"El descuento correspondiente es de: "<<bnf<<" soles"<<endl;
+										break;
+									case 8:
+										float sm, ant, utd;
+										cout<<"Ingrese el salario mensual que recibe el trabajador"<<endl;
+										cin>>sm;
+										cout<<"Ingrese el tiempo de antiguedad que tiene en la empresa en meses"<<endl;
+										cin>>ant;
+										if (ant<12)
+											utd= sm*0.05;
+										else{
+											if (ant<24)
+												utd=sm*0.07;
+											else{
+												if (ant<60)
+													utd=sm*0.1;
+												else {
+													if (ant<120)
+														utd=sm*0.15;
+													else
+														utd=sm*0.2;
+												}
+											}
+										}
+										cout<<"La utilidad del trabajador es: "<<utd<<" soles"<<endl;
+										break;
+									case 9:
+										int num,a1;
+										cout<<"Introduzca un numero entero"<<endl;
+										cin>>num;
+										a1=num%10;
+										if (num==0)
+											cout<<"El numero es nulo"<<endl;
+										else{
+											if (a1==0|a1==2|a1==4|a1==6|a1==8)
+												cout<<"El numero es par"<<endl;
+											else
+												cout<<"El numero es impar"<<endl;
+										}
+										break;
+									case 10:
+										int an;
+										cout<<"Ingrese el periodo anual"<<endl;
+										cin>>an;
+										if (an%4!=0)
+											cout<<"El periodo anual no es bisiesto"<<endl;
+										else {
+											if (an%100==0 & an%400!=0)
+												cout<<"El periodo anual no es bisiesto"<<endl;
+											else
+												cout<<"El periodo anual es bisiesto"<<endl;
+										}
+										break;
+								}
+							} while (opc2_3!=0);
+							break;
+						case 4:
+							int opc2_4;
+							do
+							{
+		                    	cout << "                    Selectivas Multiples            " << endl;
+		                    	cout << "----------------------------------------------------------------------------------" << endl;
+								cout<<"		1.-  Pago semanal de un trabajador por horas trabajadas"<<endl;	
+								cout<<"		0.- Retornar"<<endl;
+			                    cout << "----------------------------------------------------------------------------------" << endl;
+			                    cout << "     Ingrese su opcion: ";
+								switch(opc2_4)
+								{
+									case 0:
+										break;
+									case 1:
+										float ht,pxh,he,sn,sb,ds;
+										cout<<"Ingrese las horas trabajadas"<<endl;
+										cin>>ht;
+										cout<<"Ingrese el pago por hora"<<endl;
+										cin>>pxh;
+										if (ht>40){
+											he=ht-40;
+											sb=40*pxh + he*pxh*1.5;
+										}
+										else sb=ht*pxh;
+										if (sb>500){
+											ds=sb/10;
+											sn=sb-ds;
+										}
+										else sn=sb;	
+										cout<<"El pago del trabajador semanalmente es: "<<sn<<endl;
+										break;
+								}	
+							} while (opc2_4!=0);							
+							break;
+					}
+				} while (opc2!=0);
+				break;
+			case 3:
+				int opc3;
+				do
+				{
+                    cout << "                              Menu Repetitivas            " << endl;
+                    cout << "----------------------------------------------------------------------------------" << endl;
+					cout<<"			1.- Calcular: 2 + 5 + 8 + 11 + .....(N terminos)"<<endl;
+					cout<<"			2.- Calcular: 1 - 3 + 5 - 7 + ......(N terminos)"<<endl;
+					cout<<"			3.- Calcular: 1/3 + 2/5 + 3/7 + .....(N terminos)"<<endl;
+					cout<<"			4.- Calcular: 1/2 - 2/3 + 3/4 - 4/5 + .....(N terminos)"<<endl;
+					cout<<"			5.- Calcular: 2! + 4! + 6! + .....(N terminos)"<<endl;
+					cout<<"			6.- Calcular: 1! - 3! + 5! - 7! + ......(N terminos)"<<endl;
+					cout<<"			7.- Calcular: 1!/2! + 2!/3! + 3!/4! + ....(N terminos)"<<endl;
+					cout<<"			8.- Calcular: 2!/3 - 4!/3 + 6!/3 - .....(N terminos)"<<endl;
+					cout<<"			9.- Asistentes a una fiesta"<<endl;
+					cout<<"			10.- Cinco primeros numeros perfectos"<<endl;
+					cout<<"			0.-Retornar"<<endl;
+			        cout << "----------------------------------------------------------------------------------" << endl;
+			        cout << "     Ingrese su opcion: ";
+					cin>>opc3;
+					switch(opc3)
+					{
+						case 0:
+							break;
+						case 1:
+							int n,suman,i;
+							cout<<"Ingrese la cantidad de terminos"<<endl;
+							cin>>n;
+							suman=0;
+							for (i=2;i<=3*n-1;i+=3){
+								suman+=i;
+							}
+							cout<<"La suma de los numeros en serie es: "<<suman<<endl;
+							break;
+						case 2:
+							int n1;
+							cout<<"Ingrese la cantidad de terminos"<<endl;
+							cin>>n1;
+							int smn, cont1;
+							smn=0;
+							cont1=1;
+							for (int i=1; cont1<=n1; i+=2)
+							{
+								if(cont1%2 !=0)
+								smn+=i;
+								else
+								smn-=i;
+								
+							cont1++;
+							}
+							cout<<"La suma de los terminos es: "<<smn<<endl;
+							break;
+						case 3:
+							float sum;
+							sum=0;
+							int n2;
+							cout<<"Ingrese la cantidad de terminos"<<endl;
+							cin>>n2;	
+							for (int i=1; i<=n2; i++)
+								sum=sum+i/(2.0*i+1);
+							cout<<"La suma es: "<<sum<<endl;
+							break;
+						case 4:
+							int n3;
+							float sum1;
+							sum1=0;
+							cout<<"Ingrese la cantidad de terminos"<<endl;
+							cin>>n3;	
+							for (int i=1; i<=n3; i++)
+							{
+								if (i%2==0)
+									sum-=i/(1.0*i+1);
+								else 
+									sum+=i/(1.0*i+1); 
+							}
+							cout<<"La suma de la secuencia es: "<<sum1<<endl;
+							break;
+						case 5:
+							int n4;
+						   	cout << "Ingrese el numero de terminos: ";
+						   	cin >> n4;
+						    int factorial;
+						    factorial=1;
+						    int j;
+						    int sumfactorial;
+						    sumfactorial=0;
+						    for (j = 1; j <= (n4*2); j++){
+						        factorial *= j;
+						    if (j%2==0)
+						    	sumfactorial+=factorial;
+						    }
+						    cout<<"La suma de la secuencia es: "<<sumfactorial<<endl;
+							break;
+						case 6:
+							int n5;
+						   	cout << "Ingrese el numero de terminos: ";
+						   	cin >> n5;						   	
+						    int factorial1;
+						    factorial1 = 1;
+						    int k, cont;
+						    cont = 1;
+						    int sumfactorial1;
+						    sumfactorial1=0;
+						    for (k = 1; cont <= (n5*2)-1; k++){
+						        factorial1 *= k;
+						    if (k%2!=0){
+						    	if((cont+1)%4!=0)
+						    		sumfactorial1+=factorial1;
+						    	else
+						    	 	sumfactorial1-=factorial1;
+							}
+						    	cont++;
+						}
+						    cout<<"La suma de la secuencia es: "<<sumfactorial<<endl;
+							break;
+						case 7:
+							int n6; 
+							int cont2;
+							cont2=0;
+						    float suma;
+						    cout<<"Ingrese el numero de terminos: ";
+						    cin>>n6;
+						    for(int i=1; cont2<n6; i++){
+						        float facNum=1, facDen=1, num, den, div;
+						        num = i;
+						        den = i+1; 
+						        cont2 ++;
+						        for(int j=1; j<=num; j++)
+						            facNum *= j;
+						        for(int k=1; k<=den; k++)
+						            facDen *= k;
+						        div = facNum/facDen;
+						        suma +=div;
+						    }
+						   	cout<<suma;
+							break;
+						case 8:
+							int n7;
+						   	cout << "Ingrese el numero de terminos: ";
+						   	cin >> n7;
+						    double sumfactorial2; 
+						    sumfactorial2 = 0;
+							double sum2;						    
+						    int cont3;
+						    cont3 = 1;
+						    int factorial2;
+						    factorial2 = 1;
+						    for (int i = 1; cont3 <= n7; i++)
+							{
+						    	factorial2 = 1;
+						    	for (int j=1 ; j<=2*i; j++)
+						    		factorial2*=j;
+								if (cont%2==0)
+									sumfactorial2-=factorial2;
+								else
+									sumfactorial2+=factorial2;
+							sum2=sumfactorial2;
+							cont3++;
+							}
+							 cout<<"La suma de la secuencia es: "<<sum2/3<<endl;
+							break;
+						case 9:
+							int i1,edad, hombres, mujeres, divh, divm;
+							i1=0;
+							hombres=0;
+							mujeres=0; 
+							int sexo, menor;
+							menor=0;
+							double sumaedadesh;
+							sumaedadesh=0; 
+							double sumaedadesm;
+							sumaedadesm=0;
+							for(;;)
+							{
+								cout<<"Ingrese la edad de la persona (0 para terminar) ";
+								cin>>edad;
+								if (edad==0)			
+									break;
+								if (edad<18)
+								cout<<"No se permitieron menores de edad"<<endl;
+								else{
+								cout<<"Ingrese el sexo de la persona (1 para masculino o 2 para femenino) ";
+								cin>>sexo;
+								if (sexo!=1 && sexo!=2)
+								cout<<"Dato anulado, no se reconoce el sexo"<<endl;
+								else{
+								if (sexo==1){
+									hombres++;
+									sumaedadesh=sumaedadesh+edad;	
+								}
+								if (sexo==2){
+									mujeres++;
+									sumaedadesm=sumaedadesm+edad;
+									}
+								if (menor==0)
+									menor=edad;
+								else {
+									if (menor>=edad)
+									menor=edad;
+								}
+								i1++;
+								}	
+								}
+							}
+							if (hombres==0)
+								divh=1;
+							else
+								divh=hombres;
+							if (mujeres==0)
+								divm=1;
+							else
+								divm=mujeres;
+							cout<<"La cantidad de personas es "<<i1<<endl;
+							cout<<"La cantidad de hombres es "<<hombres<<endl;
+							cout<<"El promedio de edades de los hombres es "<<sumaedadesh/divh<<" anos"<<endl;
+							cout<<"La cantidad de mujeres es "<<mujeres<<endl;
+							cout<<"El promedio de edades de las mujeres es "<<sumaedadesm/divm<<" anos"<<endl;
+							cout<<"El mas joven en asistir tenia "<<menor<<" anos"<<endl;
+							break;
+						case 10:
+							cout<<"Los cinco primeros numeros perfectos son: "<<endl;
+							int cont4;
+							cont4=0;
+							int num;
+							num=1;
+							for(;;){
+								if (cont4==5)
+									break;
+								int div=0;
+								int i;
+								if (cont4==4)
+								num = 33550336;
+								for (i=1; i<num; i++){
+									if (num%i == 0)
+										div+=i;
+								}
+								if (num==div){
+								cout<<num<<endl;
+								cont++;
+								}
+								num++;
+							}
+							break;
+					}
+				} while (opc3!=0);
+				break;
+		}
+	} while (opc!=0);
+}
